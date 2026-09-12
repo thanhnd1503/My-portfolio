@@ -1,0 +1,9 @@
+# Dependencies & Tools
+ui-ux-pro-max-skill/
+.tempmediaStorage/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini

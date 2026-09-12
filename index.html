@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyễn Đạt Thành — Fullstack Software Engineer</title>
+  <meta name="description"
+    content="Portfolio chuyên sâu của Nguyễn Đạt Thành — 3 năm kinh nghiệm kiến trúc & phát triển giải pháp số CRM mới toàn diện, hiện đại hóa Legacy (Legacy Modernization), tối ưu hóa MariaDB & NestJS, thiết kế High-Density UI cho thị trường Hàn Quốc.">
+  <meta name="author" content="Nguyễn Đạt Thành">
+  <meta name="keywords"
+    content="Nguyễn Đạt Thành, Fullstack Engineer, Giải pháp số CRM, Digital Solutions, NestJS, Next.js, MariaDB, High-Density UI, Legacy Modernization, Korean Market">
+  <link rel="canonical" href="https://thanhnguyen.dev">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Nguyễn Đạt Thành — Fullstack Software Engineer">
+  <meta property="og:description"
+    content="3 năm kinh nghiệm kiến trúc & phát triển giải pháp số CRM mới toàn diện, hiện đại hóa hệ thống doanh nghiệp, tối ưu hóa MariaDB & NestJS, thiết kế High-Density UI phục vụ thị trường Hàn Quốc.">
+  <meta property="og:url" content="https://thanhnguyen.dev">
+  <meta property="og:site_name" content="Nguyễn Đạt Thành Portfolio">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Newsreader (Serif), Inter (Sans-serif), JetBrains Mono (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS Play CDN with Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            editorial: {
+              cream: '#FBFBFA',
+              dark: '#121214',
+              crimson: '#991B1B',
+              navy: '#1E3A8A',
+              borderLight: '#E4E4E7',
+              borderDark: '#27272A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Editorial CSS -->
+  <link rel="stylesheet" href="assets/css/editorial.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nguyễn Đạt Thành",
+    "jobTitle": "Fullstack Software Engineer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "TP. Hồ Chí Minh",
+      "addressCountry": "Việt Nam"
+    },
+    "description": "Chuyên sâu về kiến trúc & phát triển giải pháp số CRM mới toàn diện, song hành cùng hiện đại hóa hệ thống cũ (Legacy Modernization), tối ưu hóa MariaDB & NestJS, thiết kế High-Density UI cho thị trường Hàn Quốc.",
+    "knowsAbout": ["Next.js", "NestJS", "MariaDB", "BullMQ", "Clean Architecture", "CRM Digital Solutions", "UI/UX Design", "Figma", "High-Density UI", "Korean Market Localization"]
+  }
+  </script>
+</head>
+
+<body
+  class="bg-editorial-cream dark:bg-editorial-dark text-neutral-900 dark:text-neutral-100 transition-colors duration-200 selection:bg-red-900/20 dark:selection:bg-red-400/20">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- MASTHEAD & NAVIGATION -->
+  <header
+    class="border-b border-hairline sticky top-0 bg-editorial-cream/95 dark:bg-editorial-dark/95 backdrop-blur-sm z-50 transition-colors duration-200">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 py-3 flex items-center justify-between gap-4">
+      <!-- Masthead Brand & Dynamic Breadcrumb -->
+      <div class="flex items-center gap-3">
+        <a href="#"
+          class="group flex items-center gap-2.5 focus-visible:ring-2 focus-visible:ring-editorial-crimson outline-none rounded-sm shrink-0">
+          <span
+            class="w-7 h-7 flex items-center justify-center bg-neutral-900 dark:bg-neutral-100 text-editorial-cream dark:text-neutral-950 font-serif font-bold text-sm tracking-tight rounded-sm transition-transform group-hover:scale-105">NT</span>
+          <div class="hidden xs:block sm:block">
+            <span
+              class="font-serif font-bold text-base tracking-tight block leading-tight text-neutral-900 dark:text-neutral-100">Nguyễn
+              Đạt Thành</span>
+            <span
+              class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 dark:text-neutral-400 block">Fullstack
+              Engineer</span>
+          </div>
+        </a>
+
+        <!-- Dynamic Live Section Indicator for Mobile (Editorial Breadcrumb) -->
+        <div id="section-breadcrumb"
+          class="flex md:hidden items-center gap-1.5 pl-2.5 border-l border-hairline text-xs font-mono transition-all duration-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-editorial-crimson dark:bg-red-400 animate-pulse"></span>
+          <span id="tracker-text"
+            class="font-medium text-neutral-800 dark:text-neutral-200 tracking-tight text-[11px] transition-all">Tổng quan</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links (Desktop) -->
+      <nav
+        class="hidden md:flex items-center gap-1.5 text-xs font-mono tracking-wide text-neutral-600 dark:text-neutral-400"
+        aria-label="Điều hướng chính">
+        <a href="#hero" data-nav-id="hero"
+          class="nav-link px-3 py-1 rounded-full transition-all duration-200 hover:text-editorial-crimson dark:hover:text-red-400 flex items-center gap-1.5">
+          <span class="nav-bullet w-1.5 h-1.5 rounded-full bg-editorial-crimson dark:bg-red-400 opacity-0 transition-opacity duration-200"></span>
+          <span>Tổng quan</span>
+        </a>
+        <a href="#skills" data-nav-id="skills"
+          class="nav-link px-3 py-1 rounded-full transition-all duration-200 hover:text-editorial-crimson dark:hover:text-red-400 flex items-center gap-1.5">
+          <span class="nav-bullet w-1.5 h-1.5 rounded-full bg-editorial-crimson dark:bg-red-400 opacity-0 transition-opacity duration-200"></span>
+          <span>01. Kỹ năng</span>
+        </a>
+        <a href="#case-study" data-nav-id="case-study"
+          class="nav-link px-3 py-1 rounded-full transition-all duration-200 hover:text-editorial-crimson dark:hover:text-red-400 flex items-center gap-1.5">
+          <span class="nav-bullet w-1.5 h-1.5 rounded-full bg-editorial-crimson dark:bg-red-400 opacity-0 transition-opacity duration-200"></span>
+          <span>02. Case Study</span>
+        </a>
+      </nav>
+
+      <!-- Theme Switcher & Actions -->
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="theme-toggle" type="button" aria-label="Chuyển đổi giao diện sáng tối"
+          class="p-2 rounded border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-editorial-crimson">
+          <svg id="sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="moon-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <a href="#contact" id="nav-contact-btn" data-nav-id="contact"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded border border-neutral-900 dark:border-neutral-100 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950 hover:opacity-90 transition-all cursor-pointer">
+          <span>Liên hệ</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-4xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
+
+    <!-- ================================================================= -->
+    <!-- HERO: EDITORIAL STATEMENT (CONCISE & PUNCHY) -->
+    <!-- ================================================================= -->
+    <section id="hero" class="pb-10 border-b border-hairline">
+      <!-- Status Badge & Meta -->
+      <div
+        class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-hairline text-xs font-mono text-neutral-500 dark:text-neutral-400">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+          <span>TP. Hồ Chí Minh, Việt Nam</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span
+            class="bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 font-medium px-2 py-0.5 rounded text-[11px]">
+            ● Sẵn sàng cho cơ hội mới
+          </span>
+          <span class="text-neutral-400">•</span>
+          <span>3 Năm Kinh Nghiệm</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="pt-6 sm:pt-8">
+        <h1
+          class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50 leading-tight mb-2">
+          Nguyễn Đạt Thành
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 font-serif italic mb-5">
+          Fullstack Software Engineer
+        </p>
+
+        <!-- Concise Pitch -->
+        <blockquote
+          class="editorial-quote pl-4 py-1.5 my-5 text-neutral-800 dark:text-neutral-200 text-base sm:text-lg leading-relaxed bg-neutral-100/40 dark:bg-neutral-900/30 rounded-r">
+          “Kiến trúc &amp; phát triển <strong>giải pháp số CRM mới toàn diện</strong> song hành cùng thế
+          mạnh <strong>hiện đại hóa hệ thống cũ (Legacy Modernization)</strong>, tối ưu hóa <strong>MariaDB &amp;
+            NestJS</strong> và tư duy <strong>UI/UX High-Density</strong>.”
+        </blockquote>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center gap-2.5 pt-1">
+          <a href="#skills"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-neutral-900 hover:bg-neutral-800 dark:bg-neutral-100 dark:hover:bg-white text-white dark:text-neutral-950 text-xs font-mono font-medium rounded transition-all cursor-pointer">
+            <span>Xem Kỹ Năng</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+
+          <a href="#case-study"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 border border-hairline hover:bg-neutral-100 dark:hover:bg-neutral-800/60 text-neutral-800 dark:text-neutral-200 text-xs font-mono font-medium rounded transition-colors cursor-pointer">
+            <span>Dự Án Giải Pháp CRM Mới</span>
+          </a>
+
+          <button type="button" data-open-cv-modal
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 border border-hairline hover:bg-neutral-100 dark:hover:bg-neutral-800/60 text-neutral-800 dark:text-neutral-200 text-xs font-mono font-medium rounded transition-colors cursor-pointer">
+            <svg class="w-3.5 h-3.5 text-editorial-crimson dark:text-red-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Xem CV (PDF)</span>
+          </button>
+
+          <button type="button" data-copy-email
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 border border-dashed border-neutral-400 dark:border-neutral-600 hover:border-editorial-crimson dark:hover:border-red-400 text-neutral-700 dark:text-neutral-300 text-xs font-mono rounded transition-colors cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span>Sao chép Email</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PHẦN 1: KỸ NĂNG & NĂNG LỰC CỐT LÕI (ĐƯA LÊN ĐẦU TIÊN, NGẮN GỌN DỄ NẮM) -->
+    <!-- ================================================================= -->
+    <section id="skills" class="py-10 border-b border-hairline">
+      <div
+        class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400 pb-2 mb-4 border-b border-hairline">
+        <span>01 / Kỹ Năng Kỹ Thuật & Stack Chuyên Sâu</span>
+        <span>Core Capabilities</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <!-- 1. Frontend & UI Engineering -->
+        <div class="p-4 rounded border border-hairline bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col">
+          <div class="flex-1 flex flex-col">
+            <div class="mb-2">
+              <h3 class="font-serif font-bold text-base text-neutral-950 dark:text-neutral-100">
+                Frontend Engineering
+              </h3>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-3 leading-relaxed flex-1">
+              Next.js App Router, React Server Components, Tailwind CSS, TanStack Table. Thiết kế giao diện
+              mật độ cao (High-Density UI) và Optimistic UI updates.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap items-start content-start gap-1.5 font-mono text-[11px] pt-2 border-t border-hairline min-h-[58px] mt-auto">
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">Next.js</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">React</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">TypeScript</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">Tailwind
+              CSS</span>
+          </div>
+        </div>
+
+        <!-- 2. Backend & System Architecture -->
+        <div class="p-4 rounded border border-hairline bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col">
+          <div class="flex-1 flex flex-col">
+            <div class="mb-2">
+              <h3 class="font-serif font-bold text-base text-neutral-950 dark:text-neutral-100">
+                Backend & Architecture
+              </h3>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-3 leading-relaxed flex-1">
+              NestJS, Node.js, Clean Architecture &amp; DDD. Kiến trúc giải pháp số CRM mới từ đầu lẫn hiện đại hóa hệ
+              thống. Hàng đợi BullMQ, cơ chế Idempotent Webhooks.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap items-start content-start gap-1.5 font-mono text-[11px] pt-2 border-t border-hairline min-h-[58px] mt-auto">
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">NestJS</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">Node.js</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">Clean
+              Arch</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">BullMQ</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200">Idempotency</span>
+          </div>
+        </div>
+
+        <!-- 3. Database & Optimization -->
+        <div class="p-4 rounded border border-hairline bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col">
+          <div class="flex-1 flex flex-col">
+            <div class="mb-2">
+              <h3 class="font-serif font-bold text-base text-neutral-950 dark:text-neutral-100">
+                Database & Optimization
+              </h3>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-3 leading-relaxed flex-1">
+              MariaDB/MySQL: Composite Indexing, JSON storage & query tuning loại bỏ Full Table Scan.
+            </p>
+          </div>
+          <div
+            class="flex flex-nowrap items-center gap-1.5 font-mono text-[11px] pt-2 border-t border-hairline min-h-[58px] mt-auto overflow-hidden">
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200 whitespace-nowrap">MariaDB
+              / MySQL</span>
+            <span
+              class="px-2 py-0.5 rounded bg-white dark:bg-neutral-800 border border-hairline text-neutral-800 dark:text-neutral-200 whitespace-nowrap">Composite
+              Index</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PHẦN 2: DỰ ÁN TRỌNG TÂM - CASE STUDY NGẮN GỌN, TRỰC DIỆN -->
+    <!-- ================================================================= -->
+    <article id="case-study" class="py-10 border-b border-hairline">
+      <div
+        class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400 pb-2 mb-4 border-b border-hairline">
+        <span>02 / Featured Case Study</span>
+        <span>Thị Trường Ô Tô Hàn Quốc</span>
+      </div>
+
+      <!-- Title & Executive Summary -->
+      <div class="mb-6">
+        <div class="flex flex-wrap items-center gap-2 mb-2">
+          <span
+            class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300/40">
+            ★ Giải Pháp Số CRM Mới Toàn Diện
+          </span>
+          <span
+            class="px-2 py-0.5 rounded text-[11px] font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/80 border border-hairline">
+            Thay thế nền tảng cũ
+          </span>
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-neutral-50 tracking-tight">
+          Automotive Retail CRM &amp; Digital Solution Platform
+        </h2>
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-1 leading-relaxed">
+          Xây dựng nền tảng giải pháp số CRM mới hoàn toàn từ đầu (<code
+            class="font-mono text-xs bg-neutral-200/70 dark:bg-neutral-800 px-1 py-0.5 rounded">Next.js + NestJS + MariaDB</code>),
+          thay thế triệt để hệ thống nguyên khối cũ <code
+            class="font-mono text-xs bg-neutral-200/70 dark:bg-neutral-800 px-1 py-0.5 rounded">Angular + PHP</code>
+          và số hóa 100% nghiệp vụ phân phối xe cho chuỗi đại lý bán lẻ ô tô tại Hàn Quốc.
+        </p>
+      </div>
+
+      <!-- 4 Key Problem & Solution Points (Scannable Grid) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
+        <div class="p-3 rounded border border-hairline bg-neutral-50/40 dark:bg-neutral-900/30">
+          <strong class="font-semibold text-neutral-900 dark:text-neutral-100 block mb-1">
+            ⚡ Tối ưu truy vấn MariaDB & JSON Storage:
+          </strong>
+          <span class="text-neutral-600 dark:text-neutral-400">
+            Lập Composite Indexes trên bộ <code
+              class="font-mono text-[10px] bg-neutral-200 dark:bg-neutral-800 px-1 rounded">(status, model_code, created_at)</code>,
+            loại bỏ quét toàn bảng, cắt giảm 85% tải đĩa.
+          </span>
+        </div>
+
+        <div class="p-3 rounded border border-hairline bg-neutral-50/40 dark:bg-neutral-900/30">
+          <strong class="font-semibold text-neutral-900 dark:text-neutral-100 block mb-1">
+            🔒 Triệt tiêu tranh chấp cọc xe (Row Lock & ACID):
+          </strong>
+          <span class="text-neutral-600 dark:text-neutral-400">
+            Khóa dòng (Row-Level Locking với SELECT FOR UPDATE) và giao dịch ACID độc quyền giữ số VIN khi cọc, triệt
+            tiêu 100% lỗi bán trùng xe giữa các
+            showroom.
+          </span>
+        </div>
+
+        <div class="p-3 rounded border border-hairline bg-neutral-50/40 dark:bg-neutral-900/30">
+          <strong class="font-semibold text-neutral-900 dark:text-neutral-100 block mb-1">
+            📦 Xử lý dữ liệu lớn (BullMQ + Node Streams):
+          </strong>
+          <span class="text-neutral-600 dark:text-neutral-400">
+            Import/Export 10.000+ bản ghi qua hàng đợi bất đồng bộ và streaming data, loại bỏ hoàn toàn lỗi tràn bộ nhớ
+            (OOM).
+          </span>
+        </div>
+
+        <div class="p-3 rounded border border-hairline bg-neutral-50/40 dark:bg-neutral-900/30">
+          <strong class="font-semibold text-neutral-900 dark:text-neutral-100 block mb-1">
+            📊 Tải Dashboard tức thì (Query Optimization):
+          </strong>
+          <span class="text-neutral-600 dark:text-neutral-400">
+            Tối ưu hóa câu truy vấn tổng hợp và Composite Index cho báo cáo KPI/doanh thu đại lý, đưa thời gian phản hồi
+            API từ ~4.2s xuống &lt; 60ms.
+          </span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ================================================================= -->
+    <!-- PHẦN 3: LIÊN HỆ & FOOTER (NGẮN GỌN, TRỰC DIỆN) -->
+    <!-- ================================================================= -->
+    <footer id="contact" class="pt-10 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-hairline">
+        <!-- Message -->
+        <div>
+          <span
+            class="font-mono text-xs uppercase tracking-widest text-editorial-crimson dark:text-red-400 font-semibold mb-1 block">
+            03 / Kết Nối
+          </span>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-neutral-950 dark:text-neutral-100 mb-2">
+            Sẵn sàng đồng hành cùng dự án của bạn.
+          </h2>
+          <p class="text-xs text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">
+            Trao đổi về cơ hội Fullstack, Modernization hệ thống doanh nghiệp hoặc tư vấn kiến trúc UI/UX & cơ sở dữ
+            liệu.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <a href="mailto:thanhnd15032002@gmail.com"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 dark:bg-neutral-100 dark:hover:bg-white text-white dark:text-neutral-950 text-xs font-mono font-medium rounded transition-all cursor-pointer">
+              <span>Gửi Email</span>
+            </a>
+            <button type="button" data-copy-email
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-hairline hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs font-mono rounded cursor-pointer">
+              <span>Sao chép Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-mono text-xs">
+          <div class="p-2.5 rounded border border-hairline bg-neutral-50/60 dark:bg-neutral-900/40">
+            <span class="text-neutral-500 block text-[10px]">EMAIL</span>
+            <span
+              class="font-medium text-neutral-900 dark:text-neutral-100 text-[11px]">thanhnd15032002@gmail.com</span>
+          </div>
+          <div class="p-2.5 rounded border border-hairline bg-neutral-50/60 dark:bg-neutral-900/40">
+            <span class="text-neutral-500 block text-[10px]">GITHUB</span>
+            <a href="https://github.com/thanhnd1503" target="_blank" rel="noopener noreferrer"
+              class="text-editorial-crimson dark:text-red-400 hover:underline text-[11px]">github.com/thanhnd1503
+              ↗</a>
+          </div>
+          <div class="p-2.5 rounded border border-hairline bg-neutral-50/60 dark:bg-neutral-900/40">
+            <span class="text-neutral-500 block text-[10px]">LINKEDIN</span>
+            <a href="https://www.linkedin.com/in/th%C3%A0nh-nguy%E1%BB%85n-%C4%91%E1%BA%A1t-5bb8ba259/" target="_blank" rel="noopener noreferrer"
+              class="text-editorial-crimson dark:text-red-400 hover:underline text-[11px] break-all">linkedin.com/in/thành-nguyễn-đạt-5bb8ba259
+              ↗</a>
+          </div>
+          <div class="p-2.5 rounded border border-hairline bg-neutral-50/60 dark:bg-neutral-900/40">
+            <span class="text-neutral-500 block text-[10px]">CV (PDF)</span>
+            <button type="button" data-open-cv-modal
+              class="text-editorial-crimson dark:text-red-400 hover:underline text-[11px] cursor-pointer">Xem / Tải PDF
+              ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colophon -->
+      <div class="pt-4 flex items-center justify-between text-[11px] font-mono text-neutral-500 dark:text-neutral-400">
+        <span>© 2026 Nguyễn Đạt Thành. Minimalist & Editorial Portfolio.</span>
+        <a href="#hero" class="hover:text-editorial-crimson dark:hover:text-red-400 flex items-center gap-1">
+          <span>Về đầu trang ↑</span>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- TOAST NOTIFICATION FOR COPY EMAIL -->
+  <!-- ================================================================= -->
+  <aside id="email-toast" class="toast-container" role="status" aria-live="polite">
+    <div
+      class="px-4 py-3 rounded border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 shadow-xl flex items-center gap-3 font-mono text-xs">
+      <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+      <span id="toast-message">Đã sao chép email vào bộ nhớ tạm!</span>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- CV PREVIEW & PRINT MODAL -->
+  <!-- ================================================================= -->
+  <div id="cv-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-neutral-950/70 backdrop-blur-xs p-4 sm:p-6"
+    role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+    <div
+      class="bg-editorial-cream dark:bg-neutral-900 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded border border-hairline shadow-2xl p-6 sm:p-8 relative">
+      <!-- Close Button -->
+      <button type="button" data-close-cv-modal aria-label="Đóng cửa sổ"
+        class="absolute top-5 right-5 p-1.5 rounded text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Modal Content (CV Summary) -->
+      <div class="border-b border-hairline pb-4 mb-6">
+        <span
+          class="font-mono text-[11px] text-editorial-crimson dark:text-red-400 uppercase font-semibold block">Curriculum
+          Vitae Preview</span>
+        <h2 id="cv-modal-title"
+          class="font-serif text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-neutral-100">Nguyễn Đạt Thành</h2>
+        <p class="font-serif italic text-sm text-neutral-600 dark:text-neutral-300">Fullstack Software Engineer • TP. Hồ
+          Chí Minh</p>
+      </div>
+
+      <div class="space-y-5 text-xs sm:text-sm text-neutral-800 dark:text-neutral-200">
+        <div>
+          <h3 class="font-mono text-xs uppercase font-bold text-neutral-500 mb-1.5">Tóm Tắt Năng Lực Cốt Lõi</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            3 năm kinh nghiệm thực chiến phát triển các hệ thống web doanh nghiệp quy mô lớn. Chuyên sâu về kiến trúc
+            giải pháp số CRM mới toàn diện từ con số 0 song hành cùng hiện đại hóa hệ thống cũ (Legacy
+            Modernization), tối ưu hóa MariaDB (Composite Indexing, JSON storage) &amp; kiến trúc NestJS, kết hợp tư duy
+            UI/UX High-Density trực quan phục vụ thị trường Hàn Quốc.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs uppercase font-bold text-neutral-500 mb-1.5">Dự Án Trọng Tâm</h3>
+          <div class="p-3 rounded bg-neutral-100/60 dark:bg-neutral-800/50 border border-hairline space-y-1">
+            <div class="font-semibold text-neutral-900 dark:text-neutral-100">Automotive Retail CRM &amp; Digital
+              Solution Platform (Hàn Quốc)</div>
+            <div class="font-mono text-[11px] text-neutral-500">Next.js, NestJS, MariaDB, BullMQ — Giải Pháp Số Mới Từ
+              Con Số 0</div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+              Xây dựng giải pháp số CRM mới hoàn toàn từ đầu với Next/Nest để số hóa toàn diện quy trình đại lý và thay
+              thế triệt để hệ thống PHP/Angular cũ. Loại bỏ 100% xung đột giữ cọc qua Row-Level Lock &amp;
+              giao dịch ACID.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs uppercase font-bold text-neutral-500 mb-1.5">Tech Stack Phục Vụ Doanh Nghiệp</h3>
+          <ul class="list-disc list-inside space-y-1 text-neutral-700 dark:text-neutral-300">
+            <li><strong>Frontend:</strong> Next.js (App Router), React, TypeScript, Tailwind CSS, shadcn/ui, Optimistic
+              UI.</li>
+            <li><strong>Backend:</strong> NestJS, Node.js, Clean Architecture, Domain-Driven Design, BullMQ.</li>
+            <li><strong>Database & Systems:</strong> MariaDB (Composite Indexing, JSON storage, Query Tuning), Docker.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 pt-4 border-t border-hairline flex items-center justify-between">
+        <button type="button" data-close-cv-modal
+          class="px-3 py-1.5 text-xs font-mono text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 cursor-pointer">
+          Đóng lại
+        </button>
+
+        <div class="flex items-center gap-3">
+          <button id="modal-print-btn" type="button"
+            class="inline-flex items-center gap-1.5 px-4 py-2 bg-neutral-900 hover:bg-neutral-800 dark:bg-neutral-100 dark:hover:bg-white text-white dark:text-neutral-950 font-mono text-xs font-medium rounded cursor-pointer transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            <span>In hoặc Lưu PDF (Ctrl+P)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
