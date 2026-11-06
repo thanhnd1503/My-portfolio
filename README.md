@@ -12,7 +12,7 @@ A cinematic, minimal personal portfolio built with Next.js (App Router), React, 
 | `npm run lint`      | ESLint (next/core-web-vitals)   |
 | `npm run typecheck` | TypeScript, no emit             |
 
-Requires Node.js ≥ 20.9.
+Requires Node.js 24 LTS (see `.nvmrc`; run `nvm use`).
 
 ## Deployment (GitHub Pages)
 
