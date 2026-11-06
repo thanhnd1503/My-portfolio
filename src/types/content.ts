@@ -26,9 +26,6 @@ export interface Profile {
   titleLines: readonly string[];
   positioning: string;
   location: string;
-  concept: string;
-  /** Concept split into display lines for the hero headline. */
-  conceptLines: readonly string[];
   careerDirection: readonly string[];
 }
 

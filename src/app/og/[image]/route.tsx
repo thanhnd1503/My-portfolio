@@ -23,8 +23,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ ima
   if (!project) {
     return renderOgCard({
       eyebrow: name,
-      title: profile.concept,
-      footerLeft: profile.titleLines[0] ?? profile.title,
+      title: profile.titleLines[0] ?? profile.title,
+      footerLeft: profile.titleLines[1] ?? '',
       footerRight: profile.location,
     });
   }

@@ -3,7 +3,6 @@ import { contactDisplay, contactHref, displayName } from '@/lib/format';
 import { Container } from '@/components/ui/Container/Container';
 import { Reveal } from '@/components/motion/Reveal';
 import { SplitReveal } from '@/components/motion/SplitReveal';
-import { ClosingMark } from './ClosingMark';
 import { CopyEmail } from './CopyEmail';
 import styles from './Contact.module.scss';
 
@@ -59,8 +58,6 @@ export function Contact() {
             })}
           </Reveal>
         </div>
-
-        <ClosingMark className={styles.closing}>{profile.concept}</ClosingMark>
 
         <div className={styles.bottom}>
           <p>

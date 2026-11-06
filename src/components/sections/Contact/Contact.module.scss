@@ -152,18 +152,6 @@ a.linkValue {
   font-size: var(--text-sm);
 }
 
-.closing {
-  @include display;
-  transform-origin: center bottom;
-  font-size: clamp(3rem, 0.5rem + 11.5vw, 14rem);
-  line-height: 0.85;
-  white-space: nowrap;
-  text-align: center;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--color-line-strong);
-  user-select: none;
-  margin-inline: calc(var(--gutter) * -1);
-}
 
 .bottom {
   @include label;

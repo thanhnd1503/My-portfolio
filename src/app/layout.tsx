@@ -21,7 +21,7 @@ const mono = JetBrains_Mono({ subsets: ['latin', 'vietnamese'], variable: '--fon
 
 const name = displayName(profile);
 const homeCanonical = canonicalFor('/');
-const homeOgImage = ogImage('home', `${profile.concept} — ${profile.title}`);
+const homeOgImage = ogImage('home', `${name} — ${profile.title}`);
 
 /**
  * Runs before first paint. Marks <html data-motion="on"> when motion is allowed

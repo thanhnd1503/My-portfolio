@@ -74,28 +74,6 @@
   @include label;
 }
 
-.title {
-  @include display;
-  font-size: var(--text-hero);
-  line-height: 0.88;
-  letter-spacing: -0.035em;
-
-  em {
-    font-style: italic;
-    color: var(--color-accent);
-  }
-}
-
-.titleLine {
-  display: block;
-
-  @include from(desktop) {
-    &:last-child {
-      padding-left: 16.66%;
-    }
-  }
-}
-
 .bottom {
   display: grid;
   gap: 1.5rem;

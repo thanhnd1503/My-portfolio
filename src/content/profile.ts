@@ -2,15 +2,13 @@ import type { Profile, Statement, AboutContent } from '@/types/content';
 
 /** Identity & positioning. */
 export const profile: Profile = {
-  name: 'Nguyễn Đạt Thành',
+  name: 'NGUYEN DAT THANH',
   namePlaceholder: 'Your Name',
   title: 'Full-Stack Developer | Backend-focused Software Engineer',
   titleLines: ['Full-Stack Developer', 'Backend-focused Software Engineer'],
   positioning:
     'A software engineer focused on building maintainable backend systems, designing reliable APIs, optimizing databases, and developing enterprise applications.',
   location: 'Ho Chi Minh City, Vietnam',
-  concept: 'Beyond the Interface',
-  conceptLines: ['Beyond the', 'Interface'],
   careerDirection: ['Backend Engineering', 'Platform Engineering', 'Solution Architecture'],
 };
 

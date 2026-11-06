@@ -103,6 +103,23 @@ An inline script in `app/layout.tsx` sets `<html data-motion="on">` before first
 
 `WorksShowcase` sets `data-pinned` on the viewport, which switches CSS to `overflow-x: clip` and header-clearing padding. It then pins at `top top` and scrubs the track's `x`. The scroll length is `max(distance × 2, viewport height)`. Focusing a card scrolls the page to the matching pin position, so keyboard users can always see the focused card.
 
+### Hero X-ray lens (`sections/Hero/HeroXray.tsx`)
+
+The hero's signature effect. There is no display headline and no photo: the page's h1 is the professional title in the hero's bottom block. It uses Canvas 2D and GSAP only.
+
+- **System layer:** a canvas graph of nodes, edges and travelling request packets fills the hero. A few nodes are labelled with the owner's professionally used stack, from `skills.ts` (names of 15 characters or fewer). It uses a seeded PRNG, so the layout is the same on every visit. Outside the lens it shows at 14% through a CSS mask, intersected with a vertical fade.
+- **Lens:**
+  - It follows the mouse on fine pointers, and runs a slow figure-eight autopilot on touch screens or after 2.5s without mouse movement.
+  - JS writes `--x / --y / --r` to the layer, and the canvas mask reveals the system at full strength inside the lens.
+  - A HUD ring and tag (`SYSTEM LAYER`, coordinates) follow the lens.
+- **Motion:** the lens opens at about 1.5s. Scrolling out of the hero widens it over the whole system, through a ScrollTrigger scrub on `power2.in` progress, while the HUD fades out.
+- **Performance:**
+  - Setup runs at idle time (`requestIdleCallback`), and there are no per-frame layout reads.
+  - It pauses when the hero is off screen or the tab is hidden.
+  - Touch devices render at 30fps and park the lens after 6.5s of wall-clock time; after that it only redraws while scrolling.
+  - DPR is capped at 2 on desktop and 1.5 below it. Node count is 72 on desktop, 50 on tablet and 30 on mobile.
+- **Reduced motion:** one static, faint frame. No lens, no ticker.
+
 ### Interactive layer (Phase 3)
 
 | Piece | File | Behaviour |
@@ -114,4 +131,3 @@ An inline script in `app/layout.tsx` sets `<html data-motion="on">` before first
 | Route transition | `layout/RouteTransition/` | Capture-phase click interception for internal links to a different pathname: curtain covers, then `router.push`, then the curtain lifts once the new pathname renders. Skipped for same-page hashes, modifier clicks, `_blank`, downloads, and reduced motion. 2.5s safety reveal. |
 | Hash alignment | `RouteTransition.tsx` → `alignToHash()` | After fonts load and pins are created, re-scrolls to `#hash` (pin spacers shift anchors and ScrollTrigger refresh restores stale positions). Runs on first load and on every route change. |
 | Contact | `Contact/CopyEmail.tsx`, `Contact.module.scss` | Copy-email button with an `aria-live` status, rendered only once a real email exists. Active rows draw an accent hairline on hover. |
-| Closing transition | `Contact/ClosingMark.tsx` | Outlined concept line; characters rise and fade in, scrubbed to the final screen of scroll. Static with reduced motion. |

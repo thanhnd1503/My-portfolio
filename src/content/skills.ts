@@ -1,8 +1,9 @@
 import type { SkillCategory } from '@/types/content';
 
 /**
- * Skill context is only set where it is supported by the experience/education
- * data. Items left as `null` have not been classified by the owner yet.
+ * Skill context is set where it is supported by the experience/education data
+ * or confirmed by the owner (React.js, Next.js, Git). Items left as `null` are
+ * shown without a label.
  * TODO(owner): classify the `null` items as 'professional' | 'personal' | 'learning'.
  */
 export const skillCategories: readonly SkillCategory[] = [
@@ -38,9 +39,9 @@ export const skillCategories: readonly SkillCategory[] = [
     skills: [
       { name: 'Authentication & Authorization', context: 'professional' },
       { name: 'API Integration', context: 'professional' },
+      { name: 'Git', context: 'professional' },
       { name: 'Linux', context: null },
       { name: 'Docker', context: null },
-      { name: 'Git', context: null },
       { name: 'System Troubleshooting', context: null },
     ],
   },
@@ -49,9 +50,9 @@ export const skillCategories: readonly SkillCategory[] = [
     title: 'Frontend Development',
     summary: 'Interfaces for business applications, from legacy to modern frameworks.',
     skills: [
-      { name: 'AngularJS', context: 'professional' },
-      { name: 'React.js', context: null },
-      { name: 'Next.js', context: null },
+      { name: 'React.js', context: 'professional' },
+      { name: 'Next.js', context: 'professional' },
+      { name: 'AngularJS', context: null },
     ],
   },
 ];

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { navigation, profile } from '@/content';
 import { displayName } from '@/lib/format';
+import { HeaderShell } from './HeaderShell';
 import { MobileNav } from './MobileNav';
 import styles from './SiteHeader.module.scss';
 
@@ -8,7 +9,7 @@ export function SiteHeader() {
   const name = displayName(profile);
 
   return (
-    <header className={styles.header}>
+    <HeaderShell className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand} aria-label={`${name} — home`}>
           <span className={styles.mark} aria-hidden="true" />
@@ -29,6 +30,6 @@ export function SiteHeader() {
 
         <MobileNav items={navigation} />
       </div>
-    </header>
+    </HeaderShell>
   );
 }

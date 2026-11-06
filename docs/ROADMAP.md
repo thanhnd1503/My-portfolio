@@ -24,7 +24,7 @@
 - Hover animations: nav underline, card zoom/title/CTA underline, capability rows, experience roles, contact rows
 - Custom cursor: follower ring with link/view states; fine pointers only
 - Navigation transitions: curtain between routes, plus a hash-anchor alignment fix
-- Contact interactions (copy email) and the closing transition
+- Contact interactions (copy email)
 
 ## Phase 4 — Project Case Studies (done)
 
