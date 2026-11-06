@@ -1,0 +1,97 @@
+@use 'mixins' as *;
+
+.section {
+  padding-block: var(--section-space);
+  @include hairline(top);
+}
+
+.viewport {
+  @include from(desktop) {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+
+  // Pinned mode (set by WorksShowcase): GSAP drives the track. `clip` (not
+  // `hidden`) so focus can't scroll the viewport behind GSAP's back.
+  &[data-pinned='true'] {
+    overflow-x: clip;
+    scroll-snap-type: none;
+    // Pinned at `top top`: keep cards clear of the fixed header.
+    padding-top: calc(var(--header-height) + 1.5rem);
+  }
+}
+
+.track {
+  position: relative; // offsetLeft reference for keyboard focus handling
+  display: grid;
+  gap: 4rem;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+
+  @include from(tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem var(--gutter);
+  }
+
+  @include from(desktop) {
+    display: flex;
+    gap: calc(var(--gutter) * 1.5);
+    width: max-content;
+    max-width: none;
+    padding-inline: var(--gutter) 20vw;
+    padding-bottom: 2rem;
+  }
+}
+
+.slide {
+  @include from(desktop) {
+    flex: 0 0 auto;
+    // Width also bounded by viewport height so a pinned card always fits on screen.
+    width: min(34vw, 42rem, (100svh - 30rem) * 1.3333);
+    min-width: 22rem;
+    scroll-snap-align: start;
+    scroll-margin-left: var(--gutter);
+
+    &:nth-child(even) {
+      padding-top: 4rem; // staggered rhythm across the track
+    }
+  }
+}
+
+.progress {
+  display: none;
+
+  [data-pinned='true'] > & {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin: 1rem auto 0;
+    padding-inline: var(--gutter);
+  }
+}
+
+.progressLabel {
+  @include label;
+  white-space: nowrap;
+}
+
+.progressBar {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: var(--color-line);
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}

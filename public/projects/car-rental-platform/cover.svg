@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder image">
+<defs>
+  <radialGradient id="g" cx="85%" cy="10%" r="90%"><stop offset="0" stop-color="#A8B8C8" stop-opacity="0.16"/><stop offset="0.6" stop-color="#A8B8C8" stop-opacity="0"/></radialGradient>
+  <pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#2A2D33" stroke-width="1" opacity="0.45"/></pattern>
+</defs>
+<rect width="1600" height="1000" fill="#15171B"/>
+<rect width="1600" height="1000" fill="url(#p)"/>
+<rect width="1600" height="1000" fill="url(#g)"/><g data-safe-zone="" transform="translate(288.0 180.0) scale(0.64)">
+<g>
+<rect x="70" y="70" width="1460" height="790" rx="10" fill="#08090B" stroke="#2A2D33"/>
+<rect x="70" y="70" width="1460" height="40" rx="10" fill="#1C1F24"/><rect x="70" y="100" width="1460" height="10" fill="#1C1F24"/>
+<circle cx="92" cy="90" r="5" fill="#2A2D33"/><circle cx="110" cy="90" r="5" fill="#2A2D33"/><circle cx="128" cy="90" r="5" fill="#2A2D33"/>
+<rect x="110" y="160" width="657.0" height="34" rx="17.0" fill="#F2F0EB" opacity="0.8"/><rect x="110" y="210" width="467.2" height="34" rx="17.0" fill="#F2F0EB" opacity="0.5"/><rect x="110" y="270" width="554.8" height="12" rx="6.0" fill="#92969D" opacity="0.6"/><rect x="110" y="292" width="438.0" height="12" rx="6.0" fill="#92969D" opacity="0.6"/><rect x="110" y="332" width="150" height="40" rx="20.0" fill="#A8B8C8" opacity="0.75"/><rect x="887.6" y="140" width="584.0" height="250" rx="6" fill="#1C1F24" stroke="#2A2D33"/><circle cx="1179.6" cy="265" r="70" fill="none" stroke="#A8B8C8" stroke-opacity="0.45"/><rect x="110.0" y="430" width="446.6666666666667" height="170" rx="6" fill="#1C1F24" stroke="#2A2D33"/><rect x="130.0" y="460" width="268.0" height="12" rx="6.0" fill="#F2F0EB" opacity="0.6"/><rect x="130.0" y="486" width="357.33333333333337" height="10" rx="5.0" fill="#2A2D33" opacity="1"/><rect x="576.6666666666667" y="430" width="446.6666666666667" height="170" rx="6" fill="#1C1F24" stroke="#2A2D33"/><rect x="596.6666666666667" y="460" width="268.0" height="12" rx="6.0" fill="#F2F0EB" opacity="0.6"/><rect x="596.6666666666667" y="486" width="357.33333333333337" height="10" rx="5.0" fill="#2A2D33" opacity="1"/><rect x="1043.3333333333335" y="430" width="446.6666666666667" height="170" rx="6" fill="#1C1F24" stroke="#2A2D33"/><rect x="1063.3333333333335" y="460" width="268.0" height="12" rx="6.0" fill="#F2F0EB" opacity="0.6"/><rect x="1063.3333333333335" y="486" width="357.33333333333337" height="10" rx="5.0" fill="#2A2D33" opacity="1"/>
+</g>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="3">
+  <rect x="1300" y="924" width="260" height="40" rx="20" fill="#08090B" fill-opacity="0.75" stroke="#A8B8C8" stroke-opacity="0.5"/>
+  <text x="1430" y="949" text-anchor="middle" font-size="14" fill="#A8B8C8">PLACEHOLDER IMAGE</text>
+  <text x="40" y="950" font-size="14" fill="#92969D">CAR RENTAL PLATFORM · COVER</text>
+</g>
+</g></svg>

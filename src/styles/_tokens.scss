@@ -1,0 +1,11 @@
+// Design tokens (SCSS side). Runtime values are exposed as CSS custom
+// properties in app/globals.scss so components can share them.
+
+$breakpoints: (
+  tablet: 768px,
+  desktop: 1200px,
+  wide: 1600px,
+);
+
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);

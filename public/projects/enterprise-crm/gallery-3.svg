@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Placeholder image">
+<defs>
+  <radialGradient id="g" cx="85%" cy="10%" r="90%"><stop offset="0" stop-color="#A8B8C8" stop-opacity="0.16"/><stop offset="0.6" stop-color="#A8B8C8" stop-opacity="0"/></radialGradient>
+  <pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#2A2D33" stroke-width="1" opacity="0.45"/></pattern>
+</defs>
+<rect width="1200" height="1200" fill="#15171B"/>
+<rect width="1200" height="1200" fill="url(#p)"/>
+<rect width="1200" height="1200" fill="url(#g)"/><g data-safe-zone="" transform="translate(156.0 156.0) scale(0.74)">
+<g>
+<rect x="70" y="70" width="1060" height="990" rx="10" fill="#08090B" stroke="#2A2D33"/>
+<rect x="70" y="70" width="1060" height="40" rx="10" fill="#1C1F24"/><rect x="70" y="100" width="1060" height="10" fill="#1C1F24"/>
+<circle cx="92" cy="90" r="5" fill="#2A2D33"/><circle cx="110" cy="90" r="5" fill="#2A2D33"/><circle cx="128" cy="90" r="5" fill="#2A2D33"/>
+<rect x="110" y="160" width="477.0" height="34" rx="17.0" fill="#F2F0EB" opacity="0.8"/><rect x="110" y="210" width="339.2" height="34" rx="17.0" fill="#F2F0EB" opacity="0.5"/><rect x="110" y="270" width="402.8" height="12" rx="6.0" fill="#92969D" opacity="0.6"/><rect x="110" y="292" width="318.0" height="12" rx="6.0" fill="#92969D" opacity="0.6"/><rect x="110" y="332" width="150" height="40" rx="20.0" fill="#A8B8C8" opacity="0.75"/><rect x="663.6" y="140" width="424.0" height="250" rx="6" fill="#1C1F24" stroke="#2A2D33"/><circle cx="875.6" cy="265" r="70" fill="none" stroke="#A8B8C8" stroke-opacity="0.45"/><rect x="110.0" y="430" width="313.3333333333333" height="170" rx="6" fill="#1C1F24" stroke="#2A2D33"/><rect x="130.0" y="460" width="187.99999999999997" height="12" rx="6.0" fill="#F2F0EB" opacity="0.6"/><rect x="130.0" y="486" width="250.66666666666666" height="10" rx="5.0" fill="#2A2D33" opacity="1"/><rect x="443.3333333333333" y="430" width="313.3333333333333" height="170" rx="6" fill="#1C1F24" stroke="#2A2D33"/><rect x="463.3333333333333" y="460" width="187.99999999999997" height="12" rx="6.0" fill="#F2F0EB" opacity="0.6"/><rect x="463.3333333333333" y="486" width="250.66666666666666" height="10" rx="5.0" fill="#2A2D33" opacity="1"/><rect x="776.6666666666666" y="430" width="313.3333333333333" height="170" rx="6" fill="#1C1F24" stroke="#2A2D33"/><rect x="796.6666666666666" y="460" width="187.99999999999997" height="12" rx="6.0" fill="#F2F0EB" opacity="0.6"/><rect x="796.6666666666666" y="486" width="250.66666666666666" height="10" rx="5.0" fill="#2A2D33" opacity="1"/>
+</g>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="3">
+  <rect x="900" y="1124" width="260" height="40" rx="20" fill="#08090B" fill-opacity="0.75" stroke="#A8B8C8" stroke-opacity="0.5"/>
+  <text x="1030" y="1149" text-anchor="middle" font-size="14" fill="#A8B8C8">PLACEHOLDER IMAGE</text>
+  <text x="40" y="1150" font-size="14" fill="#92969D">ENTERPRISE CRM · GALLERY 3</text>
+</g>
+</g></svg>

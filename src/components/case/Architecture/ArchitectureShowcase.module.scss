@@ -1,0 +1,168 @@
+@use 'mixins' as *;
+
+.section {
+  padding-block: var(--section-space);
+  background: var(--color-surface);
+}
+
+// Layer stack with a vertical spine connecting the nodes.
+.stack {
+  position: relative;
+  display: grid;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.3rem;
+    top: 2.2rem;
+    bottom: 2.2rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-line-strong) 60%, transparent);
+    opacity: 0.6;
+  }
+}
+
+.layer {
+  position: relative;
+  display: grid;
+  gap: 0.75rem 2rem;
+  padding: 1.75rem 0 1.75rem 2rem;
+  @include hairline(bottom);
+
+  &:first-child {
+    @include hairline(top);
+  }
+
+  @include from(desktop) {
+    grid-template-columns: 5rem 16rem 1fr;
+    align-items: baseline;
+    padding-left: 2.5rem;
+  }
+
+  @include hover {
+    .node {
+      background: var(--color-accent);
+    }
+
+    .layerTitle {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.node {
+  position: absolute;
+  left: 0;
+  top: 2.15rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--color-surface);
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+
+.layerIndex {
+  @include label;
+  color: var(--color-accent);
+}
+
+.layerTitle {
+  @include display;
+  font-size: var(--text-lg);
+  line-height: 1.1;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.4em 0.9em;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.migration {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: clamp(4rem, 3rem + 3vw, 6rem);
+  padding: clamp(1.5rem, 1rem + 2vw, 3rem);
+  border: 1px solid var(--color-line);
+  background: var(--color-bg);
+
+  @include from(desktop) {
+    grid-template-columns: 1fr 2fr;
+    column-gap: var(--gutter);
+    align-items: center;
+  }
+}
+
+.migrationTitle {
+  @include label;
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flowGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.legacy {
+  color: var(--color-text-secondary);
+  border-style: dashed;
+}
+
+.target {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent);
+}
+
+.arrowLine {
+  width: clamp(2rem, 6vw, 5rem);
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-line-strong), var(--color-accent));
+}
+
+.arrowHead {
+  margin-left: -0.2rem;
+  line-height: 1;
+}
+
+.migrationText {
+  color: var(--color-text-secondary);
+  max-width: 56ch;
+
+  @include from(desktop) {
+    grid-column: 2;
+  }
+}
+
+.disclaimer {
+  @include label;
+  margin-top: 2rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}

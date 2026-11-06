@@ -1,0 +1,145 @@
+@use 'mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: calc((100% - 2 * var(--gutter)) / 6) 100%;
+  background-position: var(--gutter) 0;
+  mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 60%, transparent);
+  opacity: 0.6;
+
+  @include below(tablet) {
+    background-size: calc((100% - 2 * var(--gutter)) / 3) 100%;
+  }
+}
+
+.halo {
+  position: absolute;
+  width: min(90vw, 70rem);
+  aspect-ratio: 1;
+  right: -20%;
+  top: -35%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(168 184 200 / 0.14), transparent 65%);
+}
+
+.horizon {
+  transform-origin: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line-strong) 30%, var(--color-line-strong) 70%, transparent);
+}
+
+.inner {
+  display: flex;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: clamp(2rem, 1rem + 3vw, 3.5rem);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.label {
+  @include label;
+}
+
+.title {
+  @include display;
+  font-size: var(--text-hero);
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+
+  em {
+    font-style: italic;
+    color: var(--color-accent);
+  }
+}
+
+.titleLine {
+  display: block;
+
+  @include from(desktop) {
+    &:last-child {
+      padding-left: 16.66%;
+    }
+  }
+}
+
+.bottom {
+  display: grid;
+  gap: 1.5rem;
+
+  @include from(tablet) {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  @include from(desktop) {
+    grid-template-columns: 1fr 1.25fr auto;
+    column-gap: var(--gutter);
+  }
+}
+
+.role {
+  display: grid;
+  font-size: var(--text-md);
+  line-height: 1.35;
+
+  span:last-child {
+    color: var(--color-text-secondary);
+  }
+}
+
+.positioning {
+  max-width: 46ch;
+  color: var(--color-text-secondary);
+}
+
+.cue {
+  @include label;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text);
+
+  @include from(desktop) {
+    display: inline-flex;
+  }
+}
+
+.cueLine {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-line-strong);
+}

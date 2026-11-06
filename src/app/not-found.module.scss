@@ -1,0 +1,27 @@
+@use 'mixins' as *;
+
+.main {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  justify-items: start;
+  gap: 2rem;
+  padding: var(--gutter);
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.label {
+  @include label;
+  color: var(--color-accent);
+}
+
+.title {
+  @include display;
+  font-size: var(--text-2xl);
+}
+
+.link {
+  @include label;
+  color: var(--color-text);
+}

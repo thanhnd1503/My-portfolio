@@ -1,0 +1,75 @@
+@use 'mixins' as *;
+
+.hero {
+  padding-top: calc(var(--header-height) + clamp(2rem, 1rem + 4vw, 5rem));
+}
+
+.back {
+  @include label;
+  display: inline-block;
+  margin-bottom: clamp(3rem, 2rem + 4vw, 6rem);
+  color: var(--color-text);
+
+  @include hover {
+    color: var(--color-accent);
+  }
+}
+
+.heading {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.index {
+  @include label;
+  color: var(--color-accent);
+}
+
+.title {
+  @include display;
+  font-size: clamp(3rem, 1rem + 8vw, 9rem);
+  line-height: 0.92;
+}
+
+.summary {
+  max-width: 52ch;
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.facts {
+  display: grid;
+  gap: 1.25rem 2rem;
+  margin-block: clamp(3rem, 2rem + 3vw, 5rem);
+  padding-block: 1.5rem;
+  @include hairline(top);
+  @include hairline(bottom);
+
+  @include from(tablet) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.fact {
+  display: grid;
+  gap: 0.35rem;
+
+  dt {
+    @include label;
+  }
+}
+
+.external {
+  @include hover {
+    color: var(--color-accent);
+  }
+}
+
+// Doubled class beats MediaFrame's default 4 / 3 regardless of stylesheet order.
+.cover.cover {
+  aspect-ratio: 16 / 9;
+
+  @include below(tablet) {
+    aspect-ratio: 4 / 3;
+  }
+}

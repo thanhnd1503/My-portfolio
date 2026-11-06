@@ -1,0 +1,41 @@
+@use 'mixins' as *;
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(2.5rem, 2rem + 2vw, 4rem) var(--gutter);
+
+  @include from(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.item {
+  @include from(tablet) {
+    &[data-layout='wide'] {
+      grid-column: 1 / -1;
+    }
+
+    // Offset rhythm for side-by-side images.
+    &[data-offset] {
+      margin-top: clamp(3rem, 2rem + 4vw, 7rem);
+    }
+  }
+}
+
+.figure {
+  display: grid;
+  gap: 1rem;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}

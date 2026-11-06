@@ -1,0 +1,66 @@
+@use 'mixins' as *;
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.label {
+  @include label;
+  margin-bottom: 2.5rem;
+}
+
+.index {
+  color: var(--color-accent);
+  margin-right: 0.75rem;
+}
+
+.lead {
+  @include display;
+  font-size: var(--text-xl);
+  line-height: 1.12;
+  max-width: 24ch;
+
+  @include from(desktop) {
+    font-size: clamp(3rem, 1rem + 3.4vw, 4.75rem);
+  }
+}
+
+.columns {
+  display: grid;
+  gap: 3.5rem;
+  margin-top: clamp(4rem, 2rem + 6vw, 8rem);
+
+  @include from(desktop) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gutter);
+    padding-left: 16.66%;
+  }
+}
+
+.body {
+  max-width: 44ch;
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.listTitle {
+  @include label;
+  margin-bottom: 1rem;
+}
+
+.item {
+  display: flex;
+  gap: 1.25rem;
+  padding-block: 1rem;
+  @include hairline(top);
+
+  &:last-child {
+    @include hairline(bottom);
+  }
+}
+
+.itemIndex {
+  @include label;
+  color: var(--color-accent);
+  padding-top: 0.2rem;
+}

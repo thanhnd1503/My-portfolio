@@ -1,0 +1,82 @@
+@use 'mixins' as *;
+
+.nav {
+  @include hairline(top);
+}
+
+.grid {
+  display: grid;
+
+  @include from(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.link {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+  padding-block: clamp(3rem, 2rem + 4vw, 6rem);
+
+  & + & {
+    @include hairline(top);
+  }
+
+  @include from(tablet) {
+    &[data-direction='previous'] {
+      padding-right: var(--gutter);
+    }
+
+    &[data-direction='next'] {
+      padding-left: var(--gutter);
+      text-align: right;
+      justify-items: end;
+    }
+
+    & + & {
+      border-top: 0;
+      @include hairline(left);
+    }
+  }
+
+  @include hover {
+    .title {
+      color: var(--color-accent);
+    }
+
+    .arrow {
+      transform: translateX(var(--nudge));
+    }
+  }
+
+  &[data-direction='previous'] {
+    --nudge: -0.4rem;
+  }
+
+  &[data-direction='next'] {
+    --nudge: 0.4rem;
+  }
+}
+
+.meta {
+  @include label;
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+.arrow {
+  display: inline-block;
+  color: var(--color-accent);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.title {
+  @include display;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.thumb {
+  width: min(100%, 22rem);
+}

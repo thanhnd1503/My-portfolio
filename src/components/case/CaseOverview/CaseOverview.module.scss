@@ -1,0 +1,51 @@
+@use 'mixins' as *;
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.blocks {
+  display: grid;
+  gap: clamp(3rem, 2rem + 3vw, 5rem);
+}
+
+.block {
+  display: grid;
+  gap: 1.5rem;
+
+  @include from(desktop) {
+    grid-template-columns: 1fr 2fr;
+    column-gap: var(--gutter);
+  }
+}
+
+.blockTitle {
+  @include label;
+  padding-top: 0.35rem;
+}
+
+.highlights {
+  display: grid;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.15;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.items {
+  display: grid;
+  gap: 1rem;
+  font-size: var(--text-md);
+  max-width: 56ch;
+
+  li {
+    padding-top: 1rem;
+    @include hairline(top);
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "beyond-the-interface",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "build:pages": "NEXT_OUTPUT=export NEXT_PUBLIC_BASE_PATH=/My-portfolio NEXT_PUBLIC_SITE_URL=https://thanhnd1503.github.io/My-portfolio next build"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.15.1",
+    "next": "^16.4.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.5",
+    "sass": "^1.108.0",
+    "typescript": "~5.9.3"
+  }
+}

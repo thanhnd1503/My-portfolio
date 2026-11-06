@@ -1,0 +1,18 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mark {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
