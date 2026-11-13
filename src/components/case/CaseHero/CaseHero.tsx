@@ -10,7 +10,9 @@ const CONTEXT_LABEL = { professional: 'Professional work', personal: 'Personal p
 
 export function CaseHero({ project }: { project: Project }) {
   // Only verified fields become facts.
-  const facts: { label: string; value: string }[] = [{ label: 'Period', value: formatPeriod(project.period) }];
+  const facts: { label: string; value: string }[] = [];
+  if (project.client) facts.push({ label: 'Client', value: project.client });
+  if (project.period) facts.push({ label: 'Period', value: formatPeriod(project.period) });
   if (project.role) facts.push({ label: 'Role', value: project.role });
   if (project.context) facts.push({ label: 'Context', value: CONTEXT_LABEL[project.context] });
 

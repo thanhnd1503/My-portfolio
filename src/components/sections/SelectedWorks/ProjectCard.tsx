@@ -23,7 +23,7 @@ export function ProjectCard({ project, priority }: ProjectCardProps) {
       <div className={styles.body}>
         <p className={styles.meta}>
           <span className={styles.index}>{project.index}</span>
-          <span>{formatPeriod(project.period)}</span>
+          <span>{project.period ? formatPeriod(project.period) : project.client}</span>
         </p>
 
         <h3 className={styles.title}>

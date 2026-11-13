@@ -26,7 +26,7 @@ export function Capabilities() {
           index="03"
           label="Technical Capabilities"
           title="Tools, grouped by where they sit in a system."
-          intro="Marked by how each has been used, so it is clear where experience is professional and where it comes from training."
+          intro="Marked where each has been used in professional work; unmarked items are part of my toolkit outside that."
         />
 
         {usedContexts.length > 0 ? (

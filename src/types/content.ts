@@ -27,6 +27,8 @@ export interface Profile {
   positioning: string;
   location: string;
   careerDirection: readonly string[];
+  /** Spoken languages with a self-assessed level, e.g. { name: 'English', level: 'Intermediate' }. */
+  languages: readonly { name: string; level: string }[];
 }
 
 export interface Statement {
@@ -75,7 +77,9 @@ export interface EducationEntry {
   id: string;
   institution: string;
   programme: string;
-  /** Plain-language status, e.g. "Completed" or "Studied for about two years". */
+  /** e.g. "2020 – 2022". `null` = not shown. */
+  period: Pending<string>;
+  /** Plain-language status, e.g. "Completed" or "Completed core coursework". */
   status: string;
   /** Explicitly whether a credential was awarded. Never inferred. */
   credentialAwarded: boolean;
@@ -91,6 +95,12 @@ export interface ProjectImage {
   height: number;
   /** true = generated stand-in (public/projects/*.svg). Replace with a real image. */
   placeholder?: boolean;
+  /**
+   * 'cover' (default): fills the frame, cropped by the frame ratio and parallax.
+   * 'contain': shown whole — the frame takes the image's own ratio and image
+   * parallax / hover zoom are off. Use for UI screenshots.
+   */
+  fit?: 'cover' | 'contain';
 }
 
 export interface GalleryItem {
@@ -132,7 +142,10 @@ export interface Project {
   slug: string;
   index: string;
   title: string;
-  period: Period;
+  /** Project-specific dates. `null` when only the employment period is known. */
+  period: Pending<Period>;
+  /** Client / organisation the work was delivered for. */
+  client: Pending<string>;
   context: Pending<ProjectContext>;
   /** One-line description used on cards. */
   summary: string;

@@ -41,8 +41,8 @@ function mulberry32(seed: number) {
  *
  * - A canvas "system layer" (nodes, edges, travelling request packets, a few
  *   nodes labelled with the owner's stack) fills the hero, barely visible.
- * - A lens (mouse on fine pointers, an autopilot path on touch / when idle)
- *   reveals it at full strength via a CSS mask driven by `--x / --y / --r`.
+ * - A lens ring (mouse on fine pointers, an autopilot path on touch / when
+ *   idle) reveals it at full strength via a CSS mask driven by `--x / --y / --r`.
  * - Scrolling out of the hero widens the lens until the whole system shows.
  * Purely decorative (aria-hidden). Reduced motion: one static, faint frame.
  */
@@ -50,18 +50,14 @@ export function HeroXray({ labels }: HeroXrayProps) {
   const layerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const hudRef = useRef<HTMLDivElement>(null);
-  const tagRef = useRef<HTMLDivElement>(null);
-  const coordRef = useRef<HTMLSpanElement>(null);
 
   useGSAP(() => {
     const layer = layerRef.current;
     const canvas = canvasRef.current;
     const hud = hudRef.current;
-    const tag = tagRef.current;
-    const coord = coordRef.current;
     const section = layer?.closest<HTMLElement>('[data-section="hero"]');
     const context = canvas?.getContext('2d');
-    if (!layer || !canvas || !hud || !tag || !coord || !section || !context) return;
+    if (!layer || !canvas || !hud || !section || !context) return;
     const ctx = context;
 
     const mm = gsap.matchMedia();
@@ -240,8 +236,6 @@ export function HeroXray({ labels }: HeroXrayProps) {
             const hudAlpha = Math.max(0, 1 - state.boost * 4) * Math.min(1, state.r / 40);
             hud.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) scale(${state.r / 100})`;
             hud.style.opacity = String(hudAlpha);
-            tag.style.transform = `translate3d(${state.x + state.r * 0.72}px, ${state.y - state.r * 0.72}px, 0)`;
-            tag.style.opacity = String(hudAlpha);
           };
 
           build();
@@ -311,9 +305,6 @@ export function HeroXray({ labels }: HeroXrayProps) {
             state.x += (targetX - state.x) * ease;
             state.y += (targetY - state.y) * ease;
             render(dt);
-            if (frameCount % 8 === 0) {
-              coord.textContent = `x ${String(Math.round(state.x)).padStart(4, '0')} · y ${String(Math.round(state.y)).padStart(4, '0')}`;
-            }
             if (!fine && performance.now() - startedAt > touchActiveMs) parked = true;
           };
           gsap.ticker.add(tick);
@@ -374,10 +365,6 @@ export function HeroXray({ labels }: HeroXrayProps) {
       <div ref={hudRef} className={styles.hud}>
         <span className={styles.ring} />
         <span className={styles.cross} />
-      </div>
-      <div ref={tagRef} className={styles.tag}>
-        <span>System layer</span>
-        <span ref={coordRef}>x 0000 · y 0000</span>
       </div>
     </div>
   );

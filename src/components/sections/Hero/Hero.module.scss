@@ -79,12 +79,8 @@
   gap: 1.5rem;
 
   @include from(tablet) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
     align-items: end;
-  }
-
-  @include from(desktop) {
-    grid-template-columns: 1fr 1.25fr auto;
     column-gap: var(--gutter);
   }
 }
@@ -99,10 +95,6 @@
   }
 }
 
-.positioning {
-  max-width: 46ch;
-  color: var(--color-text-secondary);
-}
 
 .cue {
   @include label;

@@ -44,9 +44,6 @@ export function Hero() {
                 </Fragment>
               ))}
             </h1>
-            <p className={styles.positioning} data-hero-fade>
-              {profile.positioning}
-            </p>
             <a href="#statement" className={styles.cue} data-hero-fade>
               <span className={styles.cueLine} aria-hidden="true" />
               Scroll

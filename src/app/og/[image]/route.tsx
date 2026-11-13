@@ -32,7 +32,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ ima
   return renderOgCard({
     eyebrow: `Project ${project.index} · ${name}`,
     title: project.title,
-    footerLeft: formatPeriod(project.period),
+    footerLeft: project.period ? formatPeriod(project.period) : (project.client ?? ''),
     footerRight: profile.location,
   });
 }

@@ -43,6 +43,17 @@ export function About() {
           </div>
 
           <div>
+            <h3 className={styles.asideTitle}>Languages</h3>
+            <ul className={styles.inlineList}>
+              {profile.languages.map((language) => (
+                <li key={language.name}>
+                  {language.name} <span className={styles.level}>· {language.level}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h3 className={styles.asideTitle}>Direction</h3>
             <ol className={styles.path}>
               {profile.careerDirection.map((step, i) => (

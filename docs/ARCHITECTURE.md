@@ -111,7 +111,7 @@ The hero's signature effect. There is no display headline and no photo: the page
 - **Lens:**
   - It follows the mouse on fine pointers, and runs a slow figure-eight autopilot on touch screens or after 2.5s without mouse movement.
   - JS writes `--x / --y / --r` to the layer, and the canvas mask reveals the system at full strength inside the lens.
-  - A HUD ring and tag (`SYSTEM LAYER`, coordinates) follow the lens.
+  - A HUD ring with tick marks follows the lens.
 - **Motion:** the lens opens at about 1.5s. Scrolling out of the hero widens it over the whole system, through a ScrollTrigger scrub on `power2.in` progress, while the HUD fades out.
 - **Performance:**
   - Setup runs at idle time (`requestIdleCallback`), and there are no per-frame layout reads.

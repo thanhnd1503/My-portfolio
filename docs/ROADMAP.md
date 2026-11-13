@@ -58,12 +58,8 @@
 
 ## Content waiting on the owner
 
-Search the codebase for `TODO(owner)`.
+Profile, experience, skills, projects, education and languages were updated from the owner's resume (Nov 2026). Search the codebase for `TODO(owner)` for what is still open:
 
-- Display name (`profile.name`)
-- Contact values: email, GitHub, LinkedIn, portfolio URL
-- Employer name for the experience entry (optional)
-- Skill classification for: Database Design, Linux, Docker, Git, System Troubleshooting, React.js, Next.js
-- Projects 02 and 03: role, context (professional or personal), stack, verified details
 - Real project images to replace the placeholders in `public/projects/` (see README)
-- Architecture details for projects 02 and 03 (currently `architecture: null`, so the section is hidden)
+- Per-project dates (optional; the resume only gives the employment period, so cards show the client instead)
+- Skills shown without a "Used professionally" label (JavaScript, HTML5/SCSS, CodeIgniter, AngularJS, Redis, Elasticsearch, Drizzle ORM, PostgreSQL, System Design, Data Modeling, Performance Optimization, Docker, Nginx, Prometheus & Grafana): add a context if wanted

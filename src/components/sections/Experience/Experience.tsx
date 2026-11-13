@@ -48,10 +48,11 @@ export function Experience() {
         <Reveal as="ul" className={styles.list} each>
           {education.map((entry) => (
             <li key={entry.id} className={`${styles.entry} ${styles.educationEntry}`}>
-              <p className={styles.period}>{entry.status}</p>
+              <p className={styles.period}>{entry.period ?? entry.status}</p>
               <div className={styles.main}>
                 <h4 className={styles.role}>{entry.institution}</h4>
                 <p className={styles.focus}>{entry.programme}</p>
+                {entry.period ? <p className={styles.focus}>{entry.status}</p> : null}
               </div>
             </li>
           ))}

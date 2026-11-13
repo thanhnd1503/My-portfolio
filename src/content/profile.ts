@@ -1,27 +1,31 @@
 import type { Profile, Statement, AboutContent } from '@/types/content';
 
-/** Identity & positioning. */
+/** Identity & positioning. Source of truth: the owner's resume (Nov 2026). */
 export const profile: Profile = {
   name: 'NGUYEN DAT THANH',
   namePlaceholder: 'Your Name',
-  title: 'Full-Stack Developer | Backend-focused Software Engineer',
-  titleLines: ['Full-Stack Developer', 'Backend-focused Software Engineer'],
+  title: 'Backend Engineer | Node.js · TypeScript · System Architecture',
+  titleLines: ['Backend Engineer', 'Node.js · TypeScript · System Architecture'],
   positioning:
-    'A software engineer focused on building maintainable backend systems, designing reliable APIs, optimizing databases, and developing enterprise applications.',
+    'A backend engineer designing RESTful APIs, optimizing enterprise databases, securing systems with RBAC and SSO, and keeping production stable through careful troubleshooting and root cause analysis.',
   location: 'Ho Chi Minh City, Vietnam',
   careerDirection: ['Backend Engineering', 'Platform Engineering', 'Solution Architecture'],
+  languages: [
+    { name: 'Vietnamese', level: 'Native' },
+    { name: 'English', level: 'Intermediate' },
+  ],
 };
 
 export const statement: Statement = {
   lead: 'Most of the work that keeps software dependable happens beneath the interface — in the APIs, the data, and the decisions about structure.',
-  body: 'I am a software engineer with practical experience across full-stack development and a growing focus on backend engineering and system architecture. Day to day, that means building and maintaining enterprise applications and solving the practical problems that come with them.',
+  body: 'I am a backend engineer at Hanbiro VN, working on enterprise CRM and automotive retail platforms for Korean clients. Day to day, that means building APIs, modernizing legacy systems, and keeping production stable — and explaining what went wrong, and why, when it is not.',
   focusAreas: [
-    'Building and maintaining enterprise applications',
-    'Designing and developing RESTful APIs',
-    'Working with relational databases and query optimization',
-    'Modernizing legacy applications',
-    'Understanding system architecture and maintainability',
-    'Solving practical engineering problems',
+    'Designing RESTful APIs and service architecture',
+    'Modernizing legacy PHP / AngularJS platforms',
+    'Database optimization and production-safe data operations',
+    'Access control with RBAC and SSO',
+    'Observability with Prometheus and Grafana',
+    'Incident response and root cause analysis',
   ],
 };
 
@@ -29,9 +33,9 @@ export const about: AboutContent = {
   heading: 'How things work, underneath.',
   paragraphs: [
     'What interests me most in software is what happens after a button is pressed. How a request moves through a system — where it is validated, how data is shaped and stored, what happens when something fails — is the part of the work that holds my attention.',
-    'My work so far has taken me across both backend and frontend development, mostly on enterprise business applications. Working on both sides has made me value clean architecture, code that the next person can maintain, and solutions that fit the actual problem rather than the most interesting one.',
-    'Lately my attention has been moving further down the stack: toward infrastructure, distributed systems, system design, and platform engineering. I treat this as a long, deliberate path of learning, with the goal of eventually working as a Solution Architect.',
+    'Most of my work is on enterprise platforms for Korean automotive clients, across both backend and frontend. Production work has taught me to value maintainable code, careful changes to live data, and clear written explanations — I write incident reports in both Vietnamese and English for Korean stakeholders. I also use AI tools such as Claude Code in day-to-day operations work.',
+    'I am now extending my backend practice toward platform engineering and solution architecture: infrastructure, observability, and system design. I treat this as a long, deliberate path of learning, with the goal of eventually working as a Solution Architect.',
   ],
-  principles: ['Clean architecture', 'Maintainable code', 'Practical solutions'],
-  exploring: ['Infrastructure', 'Distributed systems', 'System design', 'Platform engineering'],
+  principles: ['End-to-end ownership', 'Maintainable code', 'Production safety', 'Practical solutions'],
+  exploring: ['Platform engineering', 'System design', 'Observability', 'Solution architecture'],
 };

@@ -15,7 +15,7 @@ export function SelectedWorks() {
           index="02"
           label="Selected Works"
           title="Systems I have worked on."
-          intro="A selection of projects across enterprise and business applications."
+          intro="Enterprise CRM and automotive retail platforms built at Hanbiro VN for Korean clients."
         />
       </Container>
 

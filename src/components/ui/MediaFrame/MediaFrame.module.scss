@@ -11,6 +11,11 @@
   inset: -6% 0; // headroom for parallax travel
 }
 
+// Whole-image mode: no parallax headroom, so nothing is cropped.
+.whole {
+  inset: 0;
+}
+
 .inner {
   position: absolute;
   inset: 0;
@@ -26,5 +31,10 @@
 @media (hover: hover) and (pointer: fine) {
   :global([data-hover-scope]:hover) .inner {
     transform: scale(1.045);
+  }
+
+  // Whole images keep every edge visible on hover too.
+  :global([data-hover-scope]:hover) .whole .inner {
+    transform: none;
   }
 }

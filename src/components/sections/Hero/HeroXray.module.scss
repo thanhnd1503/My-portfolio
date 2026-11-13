@@ -99,31 +99,3 @@
   height: 6px;
   border: 1px solid rgb(168 184 200 / 0.8);
 }
-
-.tag {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  display: grid;
-  gap: 0.15rem;
-  padding: 0.4rem 0.6rem;
-  border-left: 1px solid rgb(168 184 200 / 0.6);
-  background: rgb(8 9 11 / 0.55);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--color-accent);
-  opacity: 0;
-  will-change: transform, opacity;
-
-  span:last-child {
-    color: var(--color-text-secondary);
-  }
-
-  @include below(tablet) {
-    display: none; // keep the small screen calm
-  }
-}
